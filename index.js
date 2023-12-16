@@ -7,12 +7,32 @@ canvas.width = 16 * TILE_SIZE
 canvas.height = 9 * TILE_SIZE
 
 player = {
-	x: 0,
-	y: 0,
+	x: canvas.width / 2,
+	y: canvas.height / 2,
 	width: TILE_SIZE,
 	height: TILE_SIZE,
 	velocityX: 0,
 	velocityY: 0
+}
+
+MapS = {
+	x: 0,
+	y: 0
+}
+
+keys = {
+	w: {
+		pressed: false
+	},
+	s: {
+		pressed: false
+	},
+	a: {
+		pressed: false
+	},
+	d: {
+		pressed: false
+	}
 }
 
 class Sprite {
@@ -29,7 +49,7 @@ class Sprite {
 }
 
 function PlayerFunction() {
-	const Player = new Sprite(player.x,player.y,player.width,player.height)
+	const Player = new Sprite(player.x, player.y, player.width,player.height)
 	Player.draw()
 	drawMap()
 	movement()
@@ -49,27 +69,39 @@ function mainLoop() {
 
 function drawMap() {
 	const map = new Image()
-	displayImage(map, "img/map.png", 0, 0)
+	displayImage(map, "img/rpg map.png", MapS.x, MapS.y)
 }
 
 function movement() {
-	player.x += player.velocityX
-	player.y += player.velocityY
+	if (keys.w.pressed) {
+		player.velocityY = 4
+	}
+	if (keys.s.pressed) {
+		player.velocityY = -4
+	}
+	if (keys.a.pressed) {
+		player.velocityX = 4
+	}
+	if (keys.d.pressed) {
+		player.velocityX = -4
+	}
+	MapS.x += player.velocityX
+	MapS.y += player.velocityY
 }
 
 window.addEventListener("keydown", () => {
 	switch(event.key) {
 		case "w":
-			player.velocityY = -4
+			keys.w.pressed = true
 			break
 		case "s":
-			player.velocityY = 4
+			keys.s.pressed = true
 			break
 		case "a":
-			player.velocityX = -4
+			keys.a.pressed = true
 			break
 		case "d":
-			player.velocityX = 4
+			keys.d.pressed = true
 			break
 	}
 })
@@ -77,15 +109,19 @@ window.addEventListener("keydown", () => {
 window.addEventListener("keyup", () => {
 	switch(event.key) {
 		case "w":
+			keys.w.pressed = false
 			player.velocityY = 0
 			break
 		case "s":
+			keys.s.pressed = false
 			player.velocityY = 0
 			break
 		case "a":
+			keys.a.pressed = false
 			player.velocityX = 0
 			break
 		case "d":
+			keys.d.pressed = false
 			player.velocityX = 0
 			break
 	}

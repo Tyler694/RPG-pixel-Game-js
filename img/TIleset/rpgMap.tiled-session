@@ -1,0 +1,46 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "rpg map.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "exportAsImage.useCurrentScale": true,
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "RPG tiles.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 1
+        },
+        "rpg map.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 766,
+                "y": 524
+            }
+        }
+    },
+    "last.imagePath": "C:/Users/Admin/Documents/GitHub/RPG-pixel-Game-js/img/TIleset",
+    "map.height": 9,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "map.width": 16,
+    "openFiles": [
+        "rpg map.tmx",
+        "RPG tiles.tsx"
+    ],
+    "project": "rpgMap.tiled-project",
+    "recentFiles": [
+        "RPG tiles.tsx",
+        "rpg map.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}
