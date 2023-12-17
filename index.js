@@ -72,6 +72,18 @@ function drawMap() {
 	displayImage(map, "img/rpg map.png", MapS.x, MapS.y)
 }
 
+displayBoundaries()
+
+function displayBoundaries() {
+	for (i=0;i=boundariesData.length;i+32) {
+		for(j=0;j=32;i++) {
+			if(Element == 21) {
+				console.log("boundary found")
+			}
+		}
+	}
+}
+
 function movement() {
 	if (keys.w.pressed) {
 		player.velocityY = 4
@@ -126,6 +138,5 @@ window.addEventListener("keyup", () => {
 			break
 	}
 })
-
 
 mainLoop()
