@@ -11,8 +11,11 @@ player = {
 	y: canvas.height / 2,
 	width: TILE_SIZE,
 	height: TILE_SIZE,
-	velocityX: 0,
-	velocityY: 0
+	velocity: {
+		x: 0,
+		y: 0
+		
+	}
 }
 
 MapS = {
@@ -86,19 +89,19 @@ function displayBoundaries() {
 
 function movement() {
 	if (keys.w.pressed) {
-		player.velocityY = 4
+		player.velocity.y = 4
 	}
 	if (keys.s.pressed) {
-		player.velocityY = -4
+		player.velocity.y = -4
 	}
 	if (keys.a.pressed) {
-		player.velocityX = 4
+		player.velocity.x = 4
 	}
 	if (keys.d.pressed) {
-		player.velocityX = -4
+		player.velocity.x = -4
 	}
-	MapS.x += player.velocityX
-	MapS.y += player.velocityY
+	MapS.x += player.velocity.x
+	MapS.y += player.velocity.y
 }
 
 window.addEventListener("keydown", () => {
@@ -122,19 +125,19 @@ window.addEventListener("keyup", () => {
 	switch(event.key) {
 		case "w":
 			keys.w.pressed = false
-			player.velocityY = 0
+			player.velocity.y = 0
 			break
 		case "s":
 			keys.s.pressed = false
-			player.velocityY = 0
+			player.velocity.y = 0
 			break
 		case "a":
 			keys.a.pressed = false
-			player.velocityX = 0
+			player.velocity.x = 0
 			break
 		case "d":
 			keys.d.pressed = false
-			player.velocityX = 0
+			player.velocity.x = 0
 			break
 	}
 })
